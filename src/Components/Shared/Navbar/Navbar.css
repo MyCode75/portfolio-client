@@ -1,0 +1,129 @@
+.nav-container {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff00;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.774);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.nav-container h3 {
+  color: #fff;
+  margin-left: 2rem;
+}
+
+.nav-container h3 span {
+  color: #f04c2f;
+}
+
+.nav-container .nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+.nav-container .nav-list .list a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: calc(1rem + 0.8px);
+  position: relative;
+}
+.nav-container .nav-list .list a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #f04c2f;
+  bottom: -4px;
+  left: 0;
+  animation: hoverAnim ease 0.25s;
+}
+
+.nav-container .mobile-nav-icon {
+  display: none;
+  color: #fff;
+  font-size: 1.8rem;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Responsive for mobile device*/
+.mobile-nav-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #0d042ee1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: navToggle 0.35s ease;
+}
+.mobile-nav-container .mobile-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.mobile-nav-container .mobile-nav-list .mobile-nav-icon {
+  font-size: 2rem;
+}
+.mobile-nav-container .mobile-nav-list .list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: 0.75s all;
+  animation: navToggle 0.75s ease;
+}
+.mobile-nav-container .mobile-nav-list .list a:hover {
+  color: #f04c2f;
+}
+
+@keyframes hoverAnim {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes navToggle {
+  0% {
+    transform: translate(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-container h3 {
+    font-size: 1.8rem;
+  }
+  .nav-container .mobile-nav-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-container .nav-list {
+    display: none;
+  }
+  .nav-container .mobile-nav-icon {
+    display: block;
+  }
+}

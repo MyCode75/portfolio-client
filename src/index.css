@@ -7,10 +7,36 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 700;
+}
+h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 16px;
+  font-style: normal;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 20px;
+}
+
 body {
   font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #1d232a;
 }
 
 code {
