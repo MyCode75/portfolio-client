@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [scrollY, setScrollY] = useState(false);
+  useEffect(() => {
+    window.onscroll = function () {
+      if (window.scrollY > 0) {
+        setScrollY(true);
+      } else {
+        setScrollY(false);
+      }
+    };
+  }, []);
+  console.log(scrollY);
 
   return (
-    <nav className="nav-container">
+    <nav className="nav-container container">
       <h3>
         Code<span>Canvas</span>
       </h3>

@@ -1,13 +1,15 @@
 import React from "react";
 import "./Home.css";
 import HomeBanner from "../HomeBanner/HomeBanner";
-import Navbar from "../../Shared/Navbar/Navbar";
+import About from "../About/About";
+import Skills from "../Skills/Skills";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <HomeBanner />
+      <About id="/about" />
+      <Skills />
     </div>
   );
 };
